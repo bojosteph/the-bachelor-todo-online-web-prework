@@ -6,8 +6,8 @@ def get_first_name_of_season_winner(data, season)
   
     data[season].each do |people|
 
-      people.each do |x,y|
-        if y == "Winner"
+      people.each do |k,v|
+        if v == "Winner"
             full_name = people["name"]
             return full_name.split(' ').first
         end 
@@ -21,8 +21,8 @@ def get_contestant_name(data, occupation)
 
   data.each do |season, array|
     array.each do |people|
-      people.each do |x,y|
-        if y == occupation
+      people.each do |k,v|
+        if v == occupation
           return people["name"]
         end
       end
@@ -39,8 +39,8 @@ def count_contestants_by_hometown(data, hometown)
 counter = 0
   data.each do |season, array|
     array.each do |hash|
-      hash.each do |x,y|
-        if y == hometown
+      hash.each do |k,v|
+        if v == hometown
           counter += 1
         end
       end
@@ -57,8 +57,8 @@ def get_occupation(data, hometown)
   # code here
   data.each do |season, array|
     array.each do |hash|
-      hash.each do |x,y|
-        if y == hometown
+      hash.each do |k,v|
+        if v == hometown
           return hash["occupation"]
         end
       end
@@ -75,8 +75,8 @@ def get_average_age_for_season(data, season)
 age = 0
 count = 0
   data[season].each do |hash|
-    hash.each do |x,y|
-      if x == "age"
+    hash.each do |k,v|
+      if k == "age"
         count += 1
         age += v.to_f
       end

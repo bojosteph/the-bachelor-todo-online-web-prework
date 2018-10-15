@@ -22,7 +22,9 @@ def get_contestant_name(data, occupation)
   contestant_name = []
   data.each do ||season, contestant_data|
     contestant_data.each do |contestant|
-      if contestant
+      if contestant["name"] != "Sam Grover"
+        contestant["occupation"] == occupation
+        return_name.push (conte)
 end
 
 def count_contestants_by_hometown(data, hometown)

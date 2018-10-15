@@ -4,8 +4,8 @@
   
     data[season].each do |people|
 
-      people.each do |k,v|
-        if v == "Winner"
+      people.each do |data,season|
+        if season == "Winner"
             full_name = people["name"]
             return full_name.split(' ').first
         end 
@@ -19,7 +19,7 @@ def get_contestant_name(data, occupation)
 
   data.each do |season, array|
     array.each do |people|
-      people.each do |k,v|
+      people.each do |season,v|
         if v == occupation
           return people["name"]
         end
